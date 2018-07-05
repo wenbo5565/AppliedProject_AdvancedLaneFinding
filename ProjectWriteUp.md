@@ -39,7 +39,7 @@ You're reading it!
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the cell In [4] of the [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
+The code for this step is contained in the cell In [3] of the [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  
 
@@ -57,20 +57,14 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/undistortion.png">
 
+The code is in cell [4] of [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
+
 Steps:
 
 * call cv2 function cv2.calibrateCamera with objpoints and imgpoints from the camera calibration step in order to obtain matrix and distortion coefficient
 * apply the matrix and distortion coefficient into cv2 function cv2.undistort to correct the image
 
-```python
-def cal_undistort(img,objpoints,imgpoints):
-    """
-        undistorted an image
-    """
-    ret,mtx,dist,rvecs,tvecs = cv2.calibrateCamera(objpoints,imgpoints,(1280,720),None,None)
-    dst = cv2.undistort(img,mtx,dist,None,mtx)
-    return dst
-```
+
 
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
@@ -82,39 +76,7 @@ Steps:
 * apply thresholding (20,255) on the absoluate gradient of x direction using cv2.sobel function
 * combine the above two steps: set pixel to 1 (white) if s channel or x gradient is 1
 
-Code
-
-```python
-    def hls_threshold(img,channel="s",thresh=(0,255)):
-    img_hls = cv2.cvtColor(img,cv2.COLOR_RGB2HLS)
-    if channel == "h":
-        img_hls = img_hls[:,:,0]
-    elif channel == "l":
-        img_hls = img_hls[:,:,1]
-    else:
-        img_hls = img_hls[:,:,2]
-    bin_hls = np.zeros_like(img_hls)
-    bin_hls[(img_hls>thresh[0]) & (img_hls<thresh[1])] = 1 # set pixiel within threshold as white
-    return bin_hls
-```
-
-```python
-    def abs_sobel_thresh(img, orient='x', sobel_kernel=3,thresh=(0,255)):
-    """
-        apply sobel operator on either 'x' or 'y' direction
-    """
-    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY) # Convert to grayscale
-    
-    """ Apply x or y gradient with the OpenCV Sobel() function and take the absolute value """
-    if orient == 'x':
-        abs_sobel = np.absolute(cv2.Sobel(gray, cv2.CV_64F, 1, 0,ksize=sobel_kernel))
-    if orient == 'y':
-        abs_sobel = np.absolute(cv2.Sobel(gray, cv2.CV_64F, 0, 1,ksize=sobel_kernel))
-    scaled_sobel = np.uint8(255*abs_sobel/np.max(abs_sobel)) # Rescale back to 8 bit integer
-    binary_output = np.zeros_like(scaled_sobel) # Create a copy and apply the threshold
-    binary_output[(scaled_sobel >= thresh[0]) & (scaled_sobel <= thresh[1])] = 1 #thresholds, but exclusive is ok too
-    return binary_output
-```
+The code is in cell [5-7] of [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
 
 
 Here's an example of my output for this step. 
@@ -135,29 +97,29 @@ Here's an example of my output for this step.
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
+The code for my perspective transform includes a function called `get_transform_matrix()` and `persepctive_transform()`, which appears in cell [9] of [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
+
+The `perspective_transform` function takes as inputs an image, as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
 ```python
-src = np.float32(
-    [[(img_size[0] / 2) - 55, img_size[1] / 2 + 100],
-    [((img_size[0] / 6) - 10), img_size[1]],
-    [(img_size[0] * 5 / 6) + 60, img_size[1]],
-    [(img_size[0] / 2 + 55), img_size[1] / 2 + 100]])
-dst = np.float32(
-    [[(img_size[0] / 4), 0],
-    [(img_size[0] / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), 0]])
+src = np.float32([(578,461),
+                  (200,717), 
+                  (1109,717), 
+                  (700,461)])
+dst = np.float32([(200,0),
+                  (200,717),
+                  (1109,717),
+                 (1109,0)])
 ```
 
 This resulted in the following source and destination points:
 
 | Source        | Destination   | 
 |:-------------:|:-------------:| 
-| 585, 460      | 320, 0        | 
-| 203, 720      | 320, 720      |
-| 1127, 720     | 960, 720      |
-| 695, 460      | 960, 0        |
+| 578, 461      | 200, 0        | 
+| 200, 717      | 200, 717      |
+| 1109, 717     | 1109, 717      |
+| 700, 461      | 1109, 0        |
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
