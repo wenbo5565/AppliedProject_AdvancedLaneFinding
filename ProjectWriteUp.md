@@ -75,18 +75,51 @@ def cal_undistort(img,objpoints,imgpoints):
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  
+I used a combination of color and gradient thresholds to generate a binary image 
 
 Steps:
 * apply thresholding (100,255) on S channel of the image
 * apply thresholding (20,255) on the absoluate gradient of x direction using cv2.sobel function
 * combine the above two steps: set pixel to 1 (white) if s channel or x gradient is 1
 
+Code
+
+```python
+    def hls_threshold(img,channel="s",thresh=(0,255)):
+    img_hls = cv2.cvtColor(img,cv2.COLOR_RGB2HLS)
+    if channel == "h":
+        img_hls = img_hls[:,:,0]
+    elif channel == "l":
+        img_hls = img_hls[:,:,1]
+    else:
+        img_hls = img_hls[:,:,2]
+    bin_hls = np.zeros_like(img_hls)
+    bin_hls[(img_hls>thresh[0]) & (img_hls<thresh[1])] = 1 # set pixiel within threshold as white
+    return bin_hls
+    
+    def abs_sobel_thresh(img, orient='x', sobel_kernel=3,thresh=(0,255)):
+    """
+        apply sobel operator on either 'x' or 'y' direction
+    """
+    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY) # Convert to grayscale
+    
+    """ Apply x or y gradient with the OpenCV Sobel() function and take the absolute value """
+    if orient == 'x':
+        abs_sobel = np.absolute(cv2.Sobel(gray, cv2.CV_64F, 1, 0,ksize=sobel_kernel))
+    if orient == 'y':
+        abs_sobel = np.absolute(cv2.Sobel(gray, cv2.CV_64F, 0, 1,ksize=sobel_kernel))
+    scaled_sobel = np.uint8(255*abs_sobel/np.max(abs_sobel)) # Rescale back to 8 bit integer
+    binary_output = np.zeros_like(scaled_sobel) # Create a copy and apply the threshold
+    binary_output[(scaled_sobel >= thresh[0]) & (scaled_sobel <= thresh[1])] = 1 #thresholds, but exclusive is ok too
+    return binary_output
+```python
+
+
 Here's an example of my output for this step. 
 
 **S Channel Thresholding**
 
-<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/s_channel.png" width='800' height='400'>
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/s_channel.png">
 
 **Sobel X Thresholding**
 
