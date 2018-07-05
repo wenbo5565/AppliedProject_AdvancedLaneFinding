@@ -37,7 +37,7 @@ You're reading it!
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the first code cell of the [Jupyter Project Notebook](./examples/example.ipynb)
+The code for this step is contained in the code cell[4] of the [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  
 
@@ -52,7 +52,24 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 1. Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![alt text][image2]
+
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/undistortion.png">
+
+Steps:
+
+* call cv2 function cv2.calibrateCamera with objpoints and imgpoints from the camera calibration step in order to obtain matrix and distortion coefficient
+* apply the matrix and distortion coefficient into cv2 function cv2.undistort to correct the image
+
+```python
+def cal_undistort(img,objpoints,imgpoints):
+    """
+        undistorted an image
+    """
+    ret,mtx,dist,rvecs,tvecs = cv2.calibrateCamera(objpoints,imgpoints,(1280,720),None,None)
+    dst = cv2.undistort(img,mtx,dist,None,mtx)
+    return dst
+```
+
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
