@@ -37,50 +37,11 @@ You're reading it!
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the first code cell of the IPython notebook located in "./examples/example.ipynb" (or in lines # through # of the file called `some_file.py`).  
+The code for this step is contained in the first code cell of the [Jupyter Project Notebook](./examples/example.ipynb)
 
-```python
-    def camera_calibration(cal_img_directory):
-    """
-    In this step, the goal is to calibrate the front camera
-    using calibration images (chessboard). The output of this
-    step is object points and image points which will be
-    further used to undistort test images
-    
-    This step just need to be went through for once.
-    
-    The output of this step is the objpoints and imgpoints 
-    """
-    objpoints = [] # corner coordinate in 3D real world
-    imgpoints = [] # corner corrdiante in 2D image
-    
-    """ create object points for each calibration image """
-    objp = np.zeros((6*9,3),np.float32)
-    objp[:,:2] = np.mgrid[0:9,0:6].T.reshape(-1,2) # x,y coordinate
-    
-    """ find img points using opencv function findChessboardCorners """
-    fig,axs = plt.subplots(len(os.listdir(cal_img_directory)),2,figsize=(20,60),sharex=True)
-    fig.subplots_adjust(hspace = .2, wspace=.00001)
-    axs = axs.ravel()
-    i = 0
-    for filename in os.listdir(cal_img_directory):
-        image = input_image(cal_img_directory+filename)
-        gray = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
-        ret,corners = cv2.findChessboardCorners(gray,(9,6),None)
-        if ret == True:
-            imgpoints.append(corners)
-            objpoints.append(objp)
-        axs[i].imshow(image)
-        axs[i].axis('off')
-        i += 1
-        image = cv2.drawChessboardCorners(image, (9,6), corners, ret) # draw detected corners
-        axs[i].imshow(image)
-        axs[i].axis('off')
-        i += 1
-    return (objpoints,imgpoints)
-```
+I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  
 
-I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
+`imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
