@@ -89,7 +89,7 @@ Here's an example of my output for this step.
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/x_sobel.png" height="80%" width="80%">
 
-**HLS + Sobel X**
+**HLS(S Channel) + Sobel X**
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/hls_xsobel.png" height="80%" width="80%">
 
@@ -127,7 +127,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+I apply the "sliding window search"
 
 ![alt text][image5]
 
