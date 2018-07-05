@@ -86,7 +86,7 @@ Here's an example of my output for this step.
 
 **S Channel Thresholding**
 
-<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/s_channel.png">
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/s_channel.png" width='400' height='300'>
 
 **Sobel X Thresholding**
 
