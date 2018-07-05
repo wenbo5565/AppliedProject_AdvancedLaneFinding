@@ -78,21 +78,21 @@ def cal_undistort(img,objpoints,imgpoints):
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  
 
 Steps:
-    * apply thresholding (100,255) on S channel of the image
-    * apply thresholding (20,255) on the absoluate gradient of x direction using cv2.sobel function
-    * combine the above two steps: set pixel to 1 (white) if s channel or x gradient is 1
+* apply thresholding (100,255) on S channel of the image
+* apply thresholding (20,255) on the absoluate gradient of x direction using cv2.sobel function
+* combine the above two steps: set pixel to 1 (white) if s channel or x gradient is 1
 
 Here's an example of my output for this step. 
 
-S Channel Thresholding
+**S Channel Thresholding**
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/s_channel.png">
 
-Sobel X Thresholding
+**Sobel X Thresholding**
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/x_sobel.png">
 
-HLS + Sobel X
+**HLS + Sobel X**
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/hls_xsobel.png">
 
