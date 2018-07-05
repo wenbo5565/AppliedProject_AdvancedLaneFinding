@@ -96,7 +96,9 @@ Code
     bin_hls = np.zeros_like(img_hls)
     bin_hls[(img_hls>thresh[0]) & (img_hls<thresh[1])] = 1 # set pixiel within threshold as white
     return bin_hls
-    
+```
+
+```python
     def abs_sobel_thresh(img, orient='x', sobel_kernel=3,thresh=(0,255)):
     """
         apply sobel operator on either 'x' or 'y' direction
@@ -112,7 +114,7 @@ Code
     binary_output = np.zeros_like(scaled_sobel) # Create a copy and apply the threshold
     binary_output[(scaled_sobel >= thresh[0]) & (scaled_sobel <= thresh[1])] = 1 #thresholds, but exclusive is ok too
     return binary_output
-```python
+```
 
 
 Here's an example of my output for this step. 
