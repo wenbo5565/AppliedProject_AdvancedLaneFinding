@@ -39,7 +39,7 @@ You're reading it!
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the code cell[4] of the [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
+The code for this step is contained in the cell In [4] of the [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  
 
@@ -75,9 +75,28 @@ def cal_undistort(img,objpoints,imgpoints):
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  
 
-![alt text][image3]
+Steps:
+    * apply thresholding (100,255) on S channel of the image
+    * apply thresholding (20,255) on the absoluate gradient of x direction using cv2.sobel function
+    * combine the above two steps: set pixel to 1 (white) if s channel or x gradient is 1
+
+Here's an example of my output for this step. 
+
+S Channel Thresholding
+
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/s_channel.png">
+
+Sobel X Thresholding
+
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/x_sobel.png">
+
+HLS + Sobel X
+
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/hls_xsobel.png">
+
+
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
