@@ -83,15 +83,15 @@ Here's an example of my output for this step.
 
 **S Channel Thresholding**
 
-<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/s_channel.png">
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/s_channel.png" height="80%" width="80%">
 
 **Sobel X Thresholding**
 
-<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/x_sobel.png">
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/x_sobel.png" height="80%" width="80%">
 
 **HLS + Sobel X**
 
-<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/hls_xsobel.png">
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/hls_xsobel.png" height="80%" width="80%">
 
 
 
@@ -123,7 +123,7 @@ This resulted in the following source and destination points:
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/unwarped.png" height="60%" width="60%">
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/unwarped.png" height="80%" width="80%">
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
