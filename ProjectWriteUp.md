@@ -127,27 +127,33 @@ I verified that my perspective transform was working as expected by drawing the 
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-I apply the "sliding window search"
+I apply the "sliding window search" in [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
 
+The steps are summarized as:
+* use histogram method to get the base (starting) x pixel for each lane (y=720)
+* use a slide-window-search in bottom-up fashion to detect all pixels for each lane
+* fit a polynomial regression for detected pixels in each lane (x pixel is dependent variable and y pixel is the independent pixel)
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/slide_window_search.png" height="50%" width="50%">
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+I did this in lines # through # in [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
 
-Steps:
-*
-*  
+Steps for radius (for each of lane)
+* Get the fitted x and y in the pixel space and convert them to physical space
+* Fit the polynomial in the physical space
+* Use the coefficients in the polynomial to compute the radius for each lane
+* Average the radius
+
+Steps for car position offset
+* Use the average of frame width as the car center
+* Use the average of detected lanes (y=720) as the lane center
+* Compute the difference between (1) and (2) as the offset. If lane center is larger than car center, then the car is offset to the left and vice versa.
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
-
-Steps:
-*
-*  
-
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/result.png" height="80%" width="80%">
 
