@@ -9,4 +9,5 @@
 
 
  **Output Video in GIF Format**
+ 
  <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/output_video.gif"  height="70%" width="70%">
