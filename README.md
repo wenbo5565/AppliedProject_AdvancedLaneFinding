@@ -6,5 +6,5 @@
 2. [Jupyter Notebook]()
 3. [Example Output Images]()
 4. [Output Video in MP4 Format]()
-5. [output Video in GIF Format]
-<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/output_video.gif" >
+5. Output Video in GIF Format
+ <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/output_video.gif"  height="80%" width="80%">
