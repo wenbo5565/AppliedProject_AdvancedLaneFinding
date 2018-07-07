@@ -163,11 +163,13 @@ I implemented this step in cell [15]  [Jupyter Project Notebook](https://github.
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here is the gif version of my result video:
+Here's a [link to my video result in mp4 format](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/project_output_video.mp4)
+
+Here is the cropped gif version of my result video:
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/output_video.gif" >
 
-Here's a [link to my video result in mp4 format](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/project_output_video.mp4)
+
 
 ---
 
