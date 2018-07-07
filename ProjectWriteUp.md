@@ -153,7 +153,7 @@ Steps for car position offset
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in cell [15]  [Jupyter Project Notebook]((https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)  Here is an example of my result on a test image:
+I implemented this step in cell [15] [Jupyter Project Notebook]((https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)  Here is an example of my result on a test image:
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/result.png" height="80%" width="80%">
 
