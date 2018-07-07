@@ -127,7 +127,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-I apply the "sliding window search" in [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
+I apply the "sliding window search" in cell [12]  [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
 
 The steps are summarized as:
 * use histogram method to get the base (starting) x pixel for each lane (y=720)
@@ -138,7 +138,7 @@ The steps are summarized as:
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
+I did this in cell [14]  [Jupyter Project Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
 
 Steps for radius (for each of lane)
 * Get the fitted x and y in the pixel space and convert them to physical space
@@ -153,7 +153,7 @@ Steps for car position offset
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+I implemented this step in cell [15]  [Jupyter Project Notebook]((https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)  Here is an example of my result on a test image:
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/result.png" height="80%" width="80%">
 
