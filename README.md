@@ -12,4 +12,4 @@
  
  <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/output_video.gif"  height="70%" width="70%">
 
- [![Video on Youtube](http://img.youtube.com/vi/_-b3N_NYUBg/5.jpg)](https://youtu.be/_-b3N_NYUBg)
+ [![Video on Youtube](http://img.youtube.com/vi/_-b3N_NYUBg/0.jpg)](https://youtu.be/_-b3N_NYUBg)
