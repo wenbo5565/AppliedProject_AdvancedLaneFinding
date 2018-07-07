@@ -177,4 +177,8 @@ Here is the cropped gif version of my result video:
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+* Initially I just use s-channel thresholidng to get both lanes in a binary image. But s-channel thresholding doesn't work well to detect the dotted lane when there is change in pavement on the ground. For example, in the frame attached below, the s-thresholding will miss the right lane. To solve the problem, I add a sobel gradient thresholding on the x coordinate which turned out to be effective to detect the dotted line.
+
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/difficult1.png" height="50%" width="50%
+
+* The current thresholding pipeline includes s-channel thresholidng (HLS) and Sobel X thresholding. S-channel thresholding works very well in the project video as one of the lanes is solid lane. If the car drives in the middle lane (both left and right lanes are dotted lanes), it may not work well. 
