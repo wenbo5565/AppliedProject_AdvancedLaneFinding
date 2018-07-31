@@ -3,7 +3,7 @@
 ## Submission Link
 
 1. [Project Writeup](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/ProjectWriteUp.md)
-2. [Jupyter Notebook]()
+2. [Jupyter Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
 3. Example Output Images - Please see it in the project writeup file
 4. [Output Video in MP4 Format - Download Only](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/project_output_video.mp4)
 
