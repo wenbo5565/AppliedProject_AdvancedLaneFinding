@@ -22,7 +22,7 @@ We organize our pipeline into the following steps.
 
 Now we demonstrate the goal and effect of each step above
 
-##### Camera Calibration and Image Distortion Correction
+##### Camera calibration and image distortion correction
 
 ##### Color and gradient thresholding
 
