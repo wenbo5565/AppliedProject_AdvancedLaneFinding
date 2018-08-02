@@ -20,6 +20,10 @@ We organize our pipeline into the following steps.
 * Lane pixel detection and curve fitting
 * Draw detected lanes onto original frames
 
+Now we demonstrate the goal and effect of each step above
+
+##### Camera Calibration and Image Distortion Correction
+
 #### Technical Details
 
  
