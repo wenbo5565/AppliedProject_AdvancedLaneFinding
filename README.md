@@ -8,9 +8,7 @@ Traffic lane detection is an essential function for a self-driving car system. I
 
   <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/output_video.gif"  height="50%" width="50%">
 
-**The complete output video can be found at Youtube (Click to View)**
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/_-b3N_NYUBg/0.jpg)](https://www.youtube.com/watch?v=_-b3N_NYUBg)
+The [complete video](https://www.youtube.com/watch?v=_-b3N_NYUBg) can be find at YouTube
 
 #### Technical Summary
 
