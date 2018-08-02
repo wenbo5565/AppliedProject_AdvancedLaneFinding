@@ -12,7 +12,14 @@ The [complete video](https://www.youtube.com/watch?v=_-b3N_NYUBg) can be find at
 
 #### Technical Summary
 
+We organize our pipeline into the following steps.
 
-#### Code
+* Camera calibration and image distortion correction
+* Color and gradient thresholding
+* Perspective transformation ("birds-eye view").
+* Lane pixel detection and curve fitting
+* Draw detected lanes onto original frames
+
+#### Technical Details
 
  
