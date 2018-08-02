@@ -22,7 +22,15 @@ We organize our pipeline into the following steps.
 
 Now we demonstrate the goal and effect of each step above
 
-##### Camera Calibration and Image Distortion Correction
+###### Camera Calibration and Image Distortion Correction
+
+###### Color and gradient thresholding
+
+###### Perspective transformation ("birds-eye view")
+
+###### Lane pixel detection and curve fitting
+
+###### Draw detected lanes onto original frames
 
 #### Technical Details
 
