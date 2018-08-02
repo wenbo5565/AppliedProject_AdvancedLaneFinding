@@ -10,7 +10,7 @@ Traffic lane detection is an essential function for a self-driving car system. I
 
 **The complete output video can be found at Youtube (Click to View)**
 
-[![IMAGE ALT TEXT HERE height="50%" width="50%"](https://img.youtube.com/vi/_-b3N_NYUBg/0.jpg)](https://www.youtube.com/watch?v=_-b3N_NYUBg)
+[![IMAGE ALT TEXT HERE height="30%" width="30%"](https://img.youtube.com/vi/_-b3N_NYUBg/0.jpg)](https://www.youtube.com/watch?v=_-b3N_NYUBg)
 
 #### Technical Summary
 
