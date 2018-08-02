@@ -1,7 +1,5 @@
 ### Applied Project - Traffic Lane Detection
 
-### Introduction
-
 #### Overview
 
 Traffic lane detection is an essential function for a self-driving car system. In this project we build a software pipeline to detect traffic lanes given a camera placed in front of a car. We test our pipeline on a recorded video clip from the camera. Our pipeline works very well on the clip.
