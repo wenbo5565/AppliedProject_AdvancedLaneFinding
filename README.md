@@ -1,4 +1,4 @@
-# Project - Advanced Lane Finding
+# Applied Project - Traffic Lane Detection
 
 ## Submission Link
 
