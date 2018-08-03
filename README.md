@@ -70,7 +70,7 @@ The following images show sliding-window search anf curve fitting.
 
 The last step is drawing the detected lanes back to the original image.
 
-<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/result.png" height="80%" width="80%">
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/result.png" height="75%" width="75%">
 
 #### Technical Details
 
