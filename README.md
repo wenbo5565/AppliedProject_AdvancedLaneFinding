@@ -24,6 +24,19 @@ Now we demonstrate the goal and effect of each step above
 
 ##### Camera calibration and image distortion correction
 
+When a camera transforms a 3D physical world to a 2D image, this transformation isn't perfect. Distortion changes what the shape and size of these 3D objects appear to be. So, the first step in analyzing camera images, is to undo this distortion so that we can get correct and useful information out of them.
+
+<!-- attach distortion image -->
+
+The idea to calibrate a camera and undistor images is as follows:
+  * Find corners of a chessboard in 3D physical world. Save their coordinates in an array
+  * Take photos of the chessboards from different perspectives. Find the corners' coordinates in these images and save them in another array
+  * Put these two arrays into opencv function to compute distorted coefficients
+  * Appply distorted coefficients to undistort any image taken by the camera.
+  
+The following is the original image from a camera and its undistorted version
+
+
 ##### Color and gradient thresholding
 
 ##### Perspective transformation ("birds-eye view")
