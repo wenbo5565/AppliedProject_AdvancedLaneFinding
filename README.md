@@ -64,7 +64,7 @@ Now we have picked up lanes. In this step we apply sliding-window search approac
 
 The following images show sliding-window search anf curve fitting.
 
-<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/slide_window_search.png" height="50%" width="35%">
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/slide_window_search.png" height="50%" width="55%">
 
 #### Draw detected lanes onto original frames
 
