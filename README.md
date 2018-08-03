@@ -22,7 +22,7 @@ We organize our pipeline into the following steps.
 
 Now we demonstrate the goal and effect of each step above
 
-##### Camera calibration and image distortion correction
+#### Camera calibration and image distortion correction
 
 When a camera transforms a 3D physical world to a 2D image, this transformation isn't perfect. Distortion changes what the shape and size of these 3D objects appear to be. So, the first step in analyzing camera images, is to undo this distortion so that we can get correct and useful information out of them.
 
@@ -38,7 +38,7 @@ The following is the original image from a camera and its undistorted version
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/undistortion.png">
 
-##### Color and gradient thresholding
+#### Color and gradient thresholding
 
 Color and gradient thresholding is an important step in lane detection. The idea is to separate traffic lanes from other objects in using their quantitative characteristics in color space or gradient space. The color space could be RGB or HLS. The gradient space could be gradient on X direction, Y direction or mixed.
 
@@ -49,11 +49,11 @@ HLS(S Channel) + Sobel X
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/hls_xsobel.png" height="80%" width="80%">
 
 
-##### Perspective transformation ("birds-eye view")
+#### Perspective transformation ("birds-eye view")
 
-##### Lane pixel detection and curve fitting
+#### Lane pixel detection and curve fitting
 
-##### Draw detected lanes onto original frames
+#### Draw detected lanes onto original frames
 
 #### Technical Details
 
