@@ -56,7 +56,7 @@ The idea to achieve this transformation is similar to camera calibration. We nee
 
 The following is traffic lanes in an original space and birds-eye space.
 
-<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/unwarped.png" height="80%" width="80%">
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/unwarped.png" height="75%" width="75%">
 
 #### Lane pixel detection and curve fitting
 
