@@ -20,7 +20,7 @@ We organize our pipeline into the following steps.
 * Lane pixel detection and curve fitting
 * Draw detected lanes onto original frames
 
-Now we demonstrate the goal and effect of each step above
+Now we briefly demonstrate the goal and effect of each step above
 
 #### Camera calibration and image distortion correction
 
@@ -48,8 +48,15 @@ HLS(S Channel) + Sobel X
 
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/hls_xsobel.png" height="80%" width="80%">
 
-
 #### Perspective transformation ("birds-eye view")
+
+Now we need to pick out these two lanes. Since the camera position is fixed relative to the car, the lanes will only appear in a approximately fixed area. Therefore we can select an area containing only the lanes. In addition, as the camera is not parallel to the road plane, lanes are not parallel in the original image. Therefore we must transform the selected area from the original perspective to an birds-eye perspective.
+
+The idea to achieve this transformation is similar to camera calibration. We need to choose coordiantes for a fixed object in both the original image space and the "birds-eye" view space. Then we leverage opencv function to calculate a transformation matrix. We apply this matrix to transform images.
+
+The following is traffic lanes in an original space and birds-eye space.
+
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/unwarped.png" height="80%" width="80%">
 
 #### Lane pixel detection and curve fitting
 
