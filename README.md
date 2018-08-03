@@ -20,7 +20,7 @@ We organize our pipeline into the following steps.
 * Lane pixel detection and curve fitting
 * Draw detected lanes onto original frames
 
-Now we briefly demonstrate the goal and effect of each step above
+Now we briefly demonstrate the goal and effect of each step above. Technical details can be found at the link to Ipython Notebook in the end.
 
 #### Camera calibration and image distortion correction
 
@@ -59,6 +59,12 @@ The following is traffic lanes in an original space and birds-eye space.
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/unwarped.png" height="75%" width="75%">
 
 #### Lane pixel detection and curve fitting
+
+Now we have picked up lanes. In this step we apply sliding-window search approach to detect pixels belonging to the respective left and right lanes. Then we fit polynoimal regression to obtain our detected lanes.
+
+The following images show sliding-window search anf curve fitting.
+
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/slide_window_search.png" height="50%" width="75%">
 
 #### Draw detected lanes onto original frames
 
