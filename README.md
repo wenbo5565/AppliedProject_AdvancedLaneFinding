@@ -46,7 +46,7 @@ The following is traffic lanes in an original image and post-threholding color/g
 
 HLS(S Channel) + Sobel X
 
-<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/hls_xsobel.png" height="80%" width="80%">
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/hls_xsobel.png" height="75%" width="75%">
 
 #### Perspective transformation ("birds-eye view")
 
