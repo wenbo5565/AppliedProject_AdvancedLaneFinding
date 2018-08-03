@@ -40,6 +40,23 @@ The following is the original image from a camera and its undistorted version
 
 ##### Color and gradient thresholding
 
+Color and gradient thresholding is an important step in lane detection. The idea is to separate traffic lanes from other objects in using their quantitative characteristics in color space or gradient space. The color space could be RGB or HLS. The gradient space could be gradient on X direction, Y direction or mixed.
+
+The following is traffic lanes in an original image and post-threholding color/gradient space
+
+**S Channel Thresholding**
+
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/s_channel.png" height="70%" width="70%">
+
+**Sobel X Thresholding**
+
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/x_sobel.png" height="70%" width="70%">
+
+**HLS(S Channel) + Sobel X**
+
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/hls_xsobel.png" height="70%" width="70%">
+
+
 ##### Perspective transformation ("birds-eye view")
 
 ##### Lane pixel detection and curve fitting
