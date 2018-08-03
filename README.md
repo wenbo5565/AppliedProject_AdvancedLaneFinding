@@ -36,6 +36,7 @@ The idea to calibrate a camera and undistor images is as follows:
   
 The following is the original image from a camera and its undistorted version
 
+<img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/undistortion.png">
 
 ##### Color and gradient thresholding
 
