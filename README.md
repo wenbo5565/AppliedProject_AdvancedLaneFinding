@@ -74,7 +74,7 @@ The last step is drawing the detected lanes back to the original image.
 
 #### Technical Details
 
-Technical details and python code can be found at this [Jupyter Notebook] (https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
+Technical details and python code can be found at this [Jupyter Notebook](https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/Advanced%20Lane%20Findings.ipynb)
 
 
 
