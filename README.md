@@ -38,7 +38,9 @@ The idea to calibrate a camera and undistor images is as follows:
   
 The following is the original image from a camera and its undistorted version
 
+<p align="center">
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/undistortion.png" height=75% width=75%>
+</p>
 
 #### Color and gradient thresholding
 
@@ -48,7 +50,9 @@ The following is traffic lanes in an original image and post-threholding color/g
 
 HLS(S Channel) + Sobel X
 
+<p align="center">
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/hls_xsobel.png" height="75%" width="75%">
+</p>
 
 #### Perspective transformation ("birds-eye view")
 
@@ -58,7 +62,9 @@ The idea to achieve this transformation is similar to camera calibration. We nee
 
 The following is traffic lanes in an original space and birds-eye space.
 
+<p align="center">
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/unwarped.png" height="75%" width="75%">
+</p>
 
 #### Lane pixel detection and curve fitting
 
@@ -66,13 +72,17 @@ Now we have picked up lanes. In this step we apply sliding-window search approac
 
 The following images show sliding-window search anf curve fitting.
 
+<p align="center">
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/slide_window_search.png" height="45%" width="45%">
+</p>
 
 #### Draw detected lanes onto original frames
 
 The last step is drawing the detected lanes back to the original image.
 
+<p align="center">
 <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/images/result.png" height="75%" width="75%">
+</p>
 
 #### Technical Details
 
