@@ -8,7 +8,7 @@ Here is a sub clip of the ouput video for demo purpose
 
 <p align = "center">
   <img src="https://github.com/wenbo5565/AppliedProject_AdvancedLaneFinding/blob/master/output_video.gif"  height="50%" width="50%">
-<\p>
+</p>
   
 The [complete video](https://www.youtube.com/watch?v=_-b3N_NYUBg) can be find at YouTube
 
